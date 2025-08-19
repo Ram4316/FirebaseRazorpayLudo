@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "230995862712",
+    "project_id": "device-streaming-ec43a5e1",
+    "storage_bucket": "device-streaming-ec43a5e1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:230995862712:android:39ed39f5f918b1f63a404d",
+        "android_client_info": {
+          "package_name": "com.patwatraders.ludolegends"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbFOprysvNEpkGgC6qM5k1CZHgyminl0A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

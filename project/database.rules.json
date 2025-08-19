@@ -1,0 +1,58 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+    
+    "users": {
+      "$uid": {
+        ".read": "$uid === auth.uid",
+        ".write": "$uid === auth.uid",
+        ".validate": "newData.hasChildren(['uid', 'name'])",
+        "walletBalance": {
+          ".write": "auth.token.admin == true"
+        },
+        "transactions": {
+          ".write": "auth.token.admin == true"
+        }
+      }
+    },
+    
+    "rooms": {
+      "$roomId": {
+        ".read": "auth != null && (data.child('players').child(auth.uid).exists() || !data.exists())",
+        ".write": "auth != null",
+        "potAmount": {
+          ".write": "auth.token.admin == true"
+        },
+        "boardState": {
+          ".write": "auth.token.admin == true"
+        },
+        "diceHistory": {
+          ".write": "auth.token.admin == true"
+        },
+        "movesHistory": {
+          ".write": "auth.token.admin == true"
+        },
+        "currentTurnIndex": {
+          ".write": "auth.token.admin == true"
+        },
+        "status": {
+          ".write": "auth.token.admin == true"
+        },
+        "players": {
+          "$playerUid": {
+            "skipCount": {
+              ".write": "auth.token.admin == true"
+            },
+            "forfeited": {
+              ".write": "auth.token.admin == true"
+            },
+            "walletLockedAmount": {
+              ".write": "auth.token.admin == true"
+            }
+          }
+        }
+      }
+    }
+  }
+}
